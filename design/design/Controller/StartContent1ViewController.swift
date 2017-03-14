@@ -22,7 +22,7 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
     @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var pageControl1: UIPageControl!
-    @IBOutlet weak var backColorView: UIView!
+    
     
     @IBOutlet weak var imvInfo: UIImageView!
     //headline items
@@ -124,28 +124,27 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
             let slideDistance = scrollView.contentOffset.y
             NSLog("\(slideDistance)")
             
-            let limitdistance : CGFloat = 450
+            let limitdistance : CGFloat = 482
             if slideDistance <= limitdistance
             {
                 if slideDistance > limitdistance - 64 {
-                    
+                    titleTopConstraint.constant = slideDistance - limitdistance
                     //productImageView.isHidden = true
-                    if slideDistance > limitdistance - 32{
-                        titleTopConstraint.constant = slideDistance - limitdistance
-                        titleView.backgroundColor = backColorView.backgroundColor
+                    if slideDistance > limitdistance - 32 {
+                        //titleTopConstraint.constant = slideDistance - limitdistance
                     }
                     else{
                         titleView.backgroundColor = UIColor.clear
-                        titleTopConstraint.constant = -32
+                        //titleTopConstraint.constant = -64
                     }
                     
                     productImageView.alpha = 0
                     productDetailView.alpha = 0
                     
                 }
-                    
                 else if slideDistance > limitdistance - 160
                 {
+                    titleTopConstraint.constant = -64
                     productNameView.isHidden = false
                     productDetailView.alpha = 1 - (slideDistance - limitdistance + 160) / 100
                     productImageView.alpha = 1 - (slideDistance - limitdistance + 160) / 100
@@ -153,7 +152,7 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
                     
                 }
                 else{
-                    
+                    titleTopConstraint.constant = -64
                     //productDetailView.isHidden = false
                     productNameView.isHidden = true
                     //productImageView.isHidden = false
@@ -168,7 +167,7 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
             else{
                 //titleTopConstraint.constant = 64
                 titleTopConstraint.constant = slideDistance - limitdistance
-                titleView.backgroundColor = backColorView.backgroundColor
+                
                 productImageView.alpha = 0
                 productDetailView.alpha = 0
             }
@@ -198,6 +197,7 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
                 setCurStage(true, tag :301)
                 currentStage = 301
                 
+                
             }
             else if scrollView.contentOffset.x == screenSize.width{
                 
@@ -222,16 +222,27 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
             let value = Int(tagCount1.text!)
             tagCount1.text = "\(value! + 1)"
             tagMinus1.isUserInteractionEnabled = true
+            if value! == 30{
+                tagCount1.text = "0"
+                optionButtonTapped(self.view.viewWithTag(115) as! UIButton)
+            }
+            
+            
         }
         else if sender.tag == 102{
             let value = Int(tagCount1.text!)
             if value! <= 1 {
                 sender.isUserInteractionEnabled = false
+            }
+            else{
                 
+            }
+            if value! - 1 >= 0{
+                tagCount1.text = "\(value! - 1)"
             }
             
             
-            tagCount1.text = "\(value! - 1)"
+            
         }
         if sender.tag == 111 {
             let value = Int(tagCount2.text!)
@@ -277,13 +288,13 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
         }
         else if sender.tag == 115 {
             massView.backgroundColor = UIColor.lightGray
-            tagPlus2.isHidden = false
-            tagMinus2.isHidden = false
+            /*tagPlus2.isHidden = false
+            tagMinus2.isHidden = false*/
             massButton.backgroundColor = UIColor.white
             massButton.layer.borderColor = UIColor(colorLiteralRed: 0.4, green: 0.4, blue: 0.4, alpha: 0.4).cgColor
             massButton.layer.borderWidth = 9
-            minusLabel2.isHidden = false
-            plusLabel2.isHidden = false
+            /*minusLabel2.isHidden = false
+            plusLabel2.isHidden = false*/
             
             
             individualView.backgroundColor = UIColor.darkGray
@@ -306,7 +317,7 @@ class StartContent1ViewController: BaseViewController , UITableViewDelegate{
             viewGroup.backgroundColor = UIColor.darkGray
             groupImage.setImageWith(color: UIColor.lightGray)
         }
-        else if sender.tag == 210{
+        else if sender.tag == 210 {
             
             viewMe.backgroundColor = UIColor.darkGray
             meImage.setImageWith(color: UIColor.lightGray)

@@ -1373,6 +1373,7 @@
                         <outlet property="buttonsTopConstraint" destination="54A-RB-wtX" id="TYU-st-OgJ"/>
                         <outlet property="headerView" destination="m5g-xQ-fJc" id="x0c-6y-NMI"/>
                         <outlet property="productsCollectionView" destination="siy-sP-BAq" id="J6s-Kc-cgS"/>
+                        <outlet property="timeCounter" destination="1W1-gG-pON" id="7Gl-dg-8zQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jP-sX-Ff2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2417,7 +2418,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgV-sv-aGp">
-                                            <rect key="frame" x="0.0" y="450" width="414" height="1360"/>
+                                            <rect key="frame" x="0.0" y="482" width="414" height="1328"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gf6-Xe-8r1">
                                                     <rect key="frame" x="10" y="120.33333333333337" width="394" height="140"/>
@@ -2828,7 +2829,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfx-rm-9Sp">
-                                                                    <rect key="frame" x="8" y="15" width="115.33333333333334" height="18"/>
+                                                                    <rect key="frame" x="8" y="14.999999999999886" width="115.33333333333334" height="18"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" tag="305" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_gray" translatesAutoresizingMaskIntoConstraints="NO" id="Jua-lm-8JT">
                                                                             <rect key="frame" x="32.666666666666671" y="0.0" width="49.000000000000014" height="18"/>
@@ -2888,13 +2889,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uND-PL-5pu">
-                                                                    <rect key="frame" x="8" y="15" width="115.33333333333334" height="18"/>
+                                                                    <rect key="frame" x="8" y="14.999999999999886" width="115.33333333333334" height="18"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" tag="315" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_gray" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-G2-87y">
                                                                             <rect key="frame" x="16" y="0.0" width="49" height="18"/>
                                                                         </imageView>
                                                                         <imageView userInteractionEnabled="NO" tag="316" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_gray" translatesAutoresizingMaskIntoConstraints="NO" id="iXJ-b1-Bej">
-                                                                            <rect key="frame" x="50.333333333333314" y="-0.33333333333337123" width="49" height="18"/>
+                                                                            <rect key="frame" x="50.333333333333314" y="-0.33333333333325754" width="49" height="18"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2954,7 +2955,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQh-TA-Ef8">
-                                                                    <rect key="frame" x="8" y="15" width="115.33333333333331" height="18"/>
+                                                                    <rect key="frame" x="8" y="14.999999999999886" width="115.33333333333331" height="18"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" tag="325" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_gray" translatesAutoresizingMaskIntoConstraints="NO" id="Gwo-GB-r5J">
                                                                             <rect key="frame" x="32.666666666666629" y="0.0" width="49" height="18"/>
@@ -3224,12 +3225,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-73-LlC">
-                                                    <rect key="frame" x="0.0" y="-32" width="414" height="64"/>
+                                                    <rect key="frame" x="0.0" y="-64" width="414" height="64"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X38-00-bi8">
-                                                            <rect key="frame" x="0.0" y="32" width="414" height="32"/>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                        </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPu-tQ-7pi">
                                                             <rect key="frame" x="142" y="12" width="130" height="40"/>
                                                             <color key="backgroundColor" red="0.81568627450980391" green="0.16862745098039217" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
@@ -3250,12 +3247,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="X38-00-bi8" secondAttribute="bottom" id="1U6-TR-vHc"/>
                                                         <constraint firstAttribute="height" constant="64" id="50d-YO-dWC"/>
                                                         <constraint firstItem="KPu-tQ-7pi" firstAttribute="centerX" secondItem="GtY-73-LlC" secondAttribute="centerX" id="Gnt-1K-dcx"/>
-                                                        <constraint firstItem="X38-00-bi8" firstAttribute="leading" secondItem="GtY-73-LlC" secondAttribute="leading" id="YCv-W9-puN"/>
-                                                        <constraint firstAttribute="trailing" secondItem="X38-00-bi8" secondAttribute="trailing" id="bjJ-jR-Au8"/>
-                                                        <constraint firstItem="X38-00-bi8" firstAttribute="height" secondItem="GtY-73-LlC" secondAttribute="height" multiplier="0.5" id="dWv-dA-YLn"/>
                                                         <constraint firstItem="KPu-tQ-7pi" firstAttribute="centerY" secondItem="GtY-73-LlC" secondAttribute="centerY" id="ngr-6A-eiI"/>
                                                     </constraints>
                                                 </view>
@@ -3285,7 +3278,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="GtY-73-LlC" secondAttribute="trailing" id="fCI-uX-0dY"/>
                                                 <constraint firstItem="Hiw-VA-szu" firstAttribute="trailing" secondItem="Gf6-Xe-8r1" secondAttribute="trailing" id="fU9-Yv-1Ki"/>
                                                 <constraint firstItem="5JN-3s-5RM" firstAttribute="top" secondItem="Hiw-VA-szu" secondAttribute="bottom" constant="50" id="hx2-W7-6FK"/>
-                                                <constraint firstItem="GtY-73-LlC" firstAttribute="top" secondItem="SgV-sv-aGp" secondAttribute="top" constant="-32" id="rsA-Pw-qCw"/>
+                                                <constraint firstItem="GtY-73-LlC" firstAttribute="top" secondItem="SgV-sv-aGp" secondAttribute="top" constant="-64" id="rsA-Pw-qCw"/>
                                                 <constraint firstItem="woT-nI-3Cn" firstAttribute="leading" secondItem="SgV-sv-aGp" secondAttribute="leading" id="ujk-09-zLn"/>
                                                 <constraint firstItem="woT-nI-3Cn" firstAttribute="top" secondItem="sGh-rE-qgW" secondAttribute="bottom" constant="40" id="yPx-oN-0yN"/>
                                                 <constraint firstAttribute="trailing" secondItem="woT-nI-3Cn" secondAttribute="trailing" id="yl8-xg-CTv"/>
@@ -3296,7 +3289,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="SgV-sv-aGp" secondAttribute="trailing" id="2Hc-bF-2eQ"/>
                                         <constraint firstItem="SgV-sv-aGp" firstAttribute="leading" secondItem="vwR-IQ-SpU" secondAttribute="leading" id="2jY-s2-Vga"/>
-                                        <constraint firstItem="SgV-sv-aGp" firstAttribute="top" secondItem="vwR-IQ-SpU" secondAttribute="top" constant="450" id="9F0-xO-yey"/>
+                                        <constraint firstItem="SgV-sv-aGp" firstAttribute="top" secondItem="vwR-IQ-SpU" secondAttribute="top" constant="482" id="9F0-xO-yey"/>
                                         <constraint firstItem="f2l-cl-Tap" firstAttribute="leading" secondItem="vwR-IQ-SpU" secondAttribute="leading" id="U77-Zz-6Mu"/>
                                         <constraint firstAttribute="bottom" secondItem="SgV-sv-aGp" secondAttribute="bottom" id="jH3-pv-oUP"/>
                                         <constraint firstItem="f2l-cl-Tap" firstAttribute="top" secondItem="vwR-IQ-SpU" secondAttribute="top" id="qz2-Kt-Ay6"/>
@@ -3331,7 +3324,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backColorView" destination="X38-00-bi8" id="BFX-QR-hRN"/>
                         <outlet property="bottomImage" destination="UyS-MU-maj" id="3Rd-FN-3bZ"/>
                         <outlet property="buttonMe" destination="bDU-pb-MgY" id="dDR-1w-i26"/>
                         <outlet property="groupImage" destination="Smu-eZ-1oT" id="3u6-lV-2zC"/>

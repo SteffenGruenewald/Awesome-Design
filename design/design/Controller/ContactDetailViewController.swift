@@ -15,8 +15,12 @@ class ContactDetailViewController: BaseViewController, UITableViewDelegate {
     @IBOutlet weak var buttonsTopConstraint: NSLayoutConstraint!
     var cellSize = CGSize(width: 150, height : 198)
     
+    @IBOutlet weak var timeCounter: KDCircularProgress!
     @IBOutlet weak var backgroundImageView: UIImageView!
     var products : [ProductModel] = TestData.getFutureItems(1)
+    
+    var timer : Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +34,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        timeCounter.angle = 0
         initView()
     }
     
@@ -43,8 +48,24 @@ class ContactDetailViewController: BaseViewController, UITableViewDelegate {
         scrollView = self.view.viewWithTag(2) as! UIScrollView
         scrollView.contentOffset = CGPoint.zero
         scrollViewDidScroll(scrollView)
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timeIncrease), userInfo: nil, repeats: true)
     }
     
+    
+    func timeIncrease(){
+        var value = timeCounter.angle
+        value += 0.1
+        if value >= 360{
+            
+            timer.invalidate()
+            timeCounter.angle = 360
+        }
+        else{
+            timeCounter.angle = value
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
